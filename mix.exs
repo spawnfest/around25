@@ -15,7 +15,7 @@ defmodule ShapeShiftApi.Mixfile do
   def application do
     [
       extra_applications: [:httpoison, :poison, :logger],
-      env: [api_endpoint: "https://cors.shapeshift.io"]
+      env: [api_endpoint: "https://cors.shapeshift.io", api_key: "<insert-api-key-here>"]
     ]
   end
 
