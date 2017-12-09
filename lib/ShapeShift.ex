@@ -1,6 +1,6 @@
-defmodule Around25 do
+defmodule ShapeShift do
   @moduledoc """
-  Documentation for Around25.
+  Documentation for ShapeShift.
   """
 
   @doc """
@@ -8,7 +8,7 @@ defmodule Around25 do
 
   ## Examples
 
-      iex> Around25.hello
+      iex> ShapeShift.hello
       :world
 
   """
