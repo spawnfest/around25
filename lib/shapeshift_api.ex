@@ -3,24 +3,49 @@ defmodule ShapeShiftApi do
   Documentation of all the API calls and the corresponding parameters.
   """
 
+  @doc """
+    iex> {:ok, response} = ShapeShiftApi.get_coins
+    iex> is_map response
+    true
+  """
   def get_coins() do
     invoke_public_api("/getcoins")
   end
 
+  @doc """
+    iex> {:ok, response} = ShapeShiftApi.get_deposit_limits "BTC_ETH"
+    iex> is_map response
+    true
+  """
   def get_deposit_limits(pair) do
     invoke_public_api("/limit/" <> pair)
   end
 
+  @doc """
+    iex> {:ok, response} = ShapeShiftApi.get_exchange_rate "BTC_ETH"
+    iex> is_map response
+    true
+  """
   def get_exchange_rate(pair) do
     invoke_public_api("/rate/" <> pair)
   end
 
+  @doc """
+    iex> {:ok, response} = ShapeShiftApi.get_market_info "BTC_ETH"
+    iex> is_map response
+    true
+  """
   def get_market_info(pair) do
     invoke_public_api("/marketinfo/" <> pair)
   end
 
+  @doc """
+    iex> {:ok, response} = ShapeShiftApi.get_recent_transactions 10
+    iex> is_list response
+    true
+  """
   def get_recent_transactions(limit) do
-    invoke_public_api("/recenttx/" <> limit)
+    invoke_public_api("/recenttx/" <> Integer.to_string(limit))
   end
 
   def get_status(deposit_address) do
